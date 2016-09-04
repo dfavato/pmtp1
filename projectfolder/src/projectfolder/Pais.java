@@ -9,7 +9,6 @@ public class Pais {
 	private int bronze;
 	
 	public Pais(int id, String nome) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		setOuro(0);
