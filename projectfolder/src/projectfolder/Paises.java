@@ -35,7 +35,6 @@ public class Paises {
 		} catch (IOException e) {
 			System.err.println("Não foi possível abrir o arquivo " + file);
 		}
-		
 	}
 	
 	public void registrarPais(Pais pais) {
