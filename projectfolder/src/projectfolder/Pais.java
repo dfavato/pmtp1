@@ -15,6 +15,10 @@ public class Pais {
 	
 	private static HashMap<Integer, Pais> inscritos = new HashMap<>();
 	
+	public static final int OURO = 1;
+	public static final int PRATA = 2;
+	public static final int BRONZE = 3;
+	
 //	Class methods
 	public static Pais getPaisById(int id) {
 		for (Pais pais : inscritos.values()) {
@@ -94,6 +98,30 @@ public class Pais {
 	}
 	public String getNome() {
 		return nome;
+	}
+	
+	public int ganharMedalha(int tipo) {
+		int medalhas = 0;
+		switch (tipo) {
+		case OURO:
+			medalhas = this.getOuro();
+			medalhas++;
+			this.setOuro(medalhas);
+			break;
+		case PRATA:
+			medalhas = this.getPrata();
+			medalhas++;
+			this.setPrata(medalhas);
+			break;
+		case BRONZE:
+			medalhas = this.getBronze();
+			medalhas++;
+			this.setBronze(medalhas);
+			break;
+		default:
+			break;
+		}
+		return medalhas;
 	}
 	
 	@Override
