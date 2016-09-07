@@ -1,9 +1,6 @@
 package projectfolder;
 
-import java.io.Serializable;
-
-public class Pais implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Pais {
 	private int id;
 	private String nome;
 	private int ouro;
