@@ -1,7 +1,9 @@
 package projectfolder;
 
+import java.io.Serializable;
 
-public class Pais {
+public class Pais implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nome;
 	private int ouro;
@@ -14,6 +16,10 @@ public class Pais {
 		setOuro(0);
 		setPrata(0);
 		setBronze(0);
+	}
+	
+	public Pais(String line) {
+		this(Integer.parseInt(line.split(";")[0]), line.split(";")[1]);
 	}
 	
 	public int getOuro() {
@@ -46,5 +52,5 @@ public class Pais {
 		return this.getNome() + " " + this.getOuro() + " " +
 				this.getPrata() + " " + this.getBronze();
 	}
-	
+		
 }
