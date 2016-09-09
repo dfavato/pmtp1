@@ -1,18 +1,12 @@
 package projectfolder;
 
 public class Result implements Comparable<Result>{
-	private AbstractSport sport;
 	private Athlete athlete;
 	private double value;
 	
-	public Result(AbstractSport sport, Athlete athlete, double value) {
-		this.sport = sport;
+	public Result(Athlete athlete, double value) {
 		this.athlete = athlete;
 		this.value = value;
-	}
-
-	public AbstractSport getSport() {
-		return sport;
 	}
 
 	public Athlete getAthlete() {

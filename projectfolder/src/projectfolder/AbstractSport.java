@@ -1,10 +1,11 @@
 package projectfolder;
 
 import java.util.TreeMap;
+import java.utli.LinkedList;
 
 public abstract class AbstractSport {
 	private String name;
-	private TreeMap<double, Athlete> registered;
+	private LinkedList<Result> results;
 	public static final int PODIUM_SIZE = 3;
 	
 	public void AbstractSport(String name){
