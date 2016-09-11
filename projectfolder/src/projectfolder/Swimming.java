@@ -10,7 +10,7 @@ public class Swimming extends AbstractSport {
 
 	@Override
 	public double calculateScore(double[] timing) {
-		return getLowerScore(timing);
+		return this.getLowerScore(timing);
 	}
 
 

@@ -10,7 +10,7 @@ public class Gymnastics extends AbstractSport {
 
 	@Override
 	public double calculateScore(double[] scores) {
-		return getHigherScore(scores);
+		return this.getAvgScore(scores);
 	}
 
 }

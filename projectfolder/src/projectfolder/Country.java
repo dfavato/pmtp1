@@ -7,28 +7,16 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class Country {
-	private int id;
 	private String name;
-	private int gold;
-	private int silver;
-	private int bronze;
-	
-	private static HashMap<Integer, Country> registered = new HashMap<>();
+	private int gold = 0;
+	private int silver = 0;
+	private int bronze = 0;	
 	
 	public static final int GOLD = 1;
 	public static final int SILVER = 2;
 	public static final int BRONZE = 3;
-	
-//	Class methods
-	public static Country getCountryById(int id) {
-		for (Country country : registered.values()) {
-			if(country.getId() == id) {
-				return country;
-			}
-		}
-		return null;
-	}
-	
+
+/*
 	public static void registerFromFile(String file) {
 		BufferedReader br;
 		String line;
@@ -47,13 +35,7 @@ public class Country {
 			System.err.println("Não foi possível abrir o arquivo " + file);
 		}
 	}
-	
-	public static void registerCountry(Country country) {
-		if(!registered.containsKey(country.getId())) {
-			registered.put(country.getId(), country);
-		}
-	}
-	
+*/	
 	public static void medalBoard() {
 		System.out.println("Quadro de medalhas\n");
 		System.out.println("País Ouro Prata Bronze");
@@ -66,13 +48,6 @@ public class Country {
 	public Country(int id, String strName) {
 		this.id = id;
 		this.name = strName;
-		setGold(0);
-		setSilver(0);
-		setBronze(0);
-	}
-	
-	public Country(String line) {
-		this(Integer.parseInt(line.split(";")[0]), line.split(";")[1]);
 	}
 	
 	public int getGold() {

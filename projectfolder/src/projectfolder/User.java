@@ -3,14 +3,27 @@ package projectfolder;
 public class User {
 
 	public static void main(String[] args) {
-		Country.registerFromFile("paises.txt");
-		Race corrida = new Race(1);
-		Athlete kws = new Athlete(1, "Kawasaki", Country.getCountryById(1));
-		corrida.registerResult(kws, 10.78);
-		corrida.awardMedals();
-		System.out.println(corrida.toString());
-		Country.medalBoard();
-		
+		SportsContainer sports = new SportsContainer();
+		CountryContainer countries = new CountryContainer();
+		AthleteContainer athletes = new AthleteContainer();
+		getSports(sports,"esportes.txt");
+		getCountries(countries,"paises.txt");
+		getAthletesResults(athletes,sports,"atletas.txt");
+		AbstractSport sport;
+		for(int i=0; i<5; i++){
+			sport = sports.getSportById(i);
+			sport.awardMedals();
+		}
+		//abrir arquivo de estatisticas e gerar os dados
+	}
+	public void getSports(SportsContainer sports, String fileAdress){
+		//
+	}
+	public void getCountries(CountryContainer countries ,String fileAdress){
+		//
+	}
+	public void getAthletesResults(AthleteContainer athletes, SportsContainer sports, String fileAdress){
+		//
 	}
 
 }

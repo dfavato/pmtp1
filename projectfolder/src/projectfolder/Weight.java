@@ -10,7 +10,7 @@ public class Weight extends AbstractSport {
 
 	@Override
 	public double calculateScore(double[] weights) {
-		return getHigherScore(weights);
+		return this.getTotalScore(weights);
 	}
 
 

@@ -11,6 +11,8 @@ public class SportContainer{
 	private static final int GYMNASTICS = 5;
 
 	public void insertSport(int id, int name){
+		//it uses createSport cause the sport type may vary
+		//its created a AbstractSports son, not an AbstractSport
 		AbstractSport newSport = createSport(id,name);
 		registered.put(id,newSport);
 	}
@@ -44,4 +46,5 @@ public class SportContainer{
 	public AbstractSport getSportById(int id){
 		return registered.get(id);
 	}
+ 
 }

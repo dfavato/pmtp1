@@ -10,7 +10,7 @@ public class Jump extends AbstractSport {
 
 	@Override
 	public double calculateScore(double[] jumps) {
-		return getHigherScore(jumps);
+		return this.getHigherScore(jumps);
 	}
 
 }

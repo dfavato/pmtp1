@@ -12,7 +12,31 @@ public abstract class AbstractSport {
 		this.name = name;
 	}
 
+	public void insertCompetitorResult(Athlete athlete, double score){
+		Result newResult = new Result(athlete,score);
+		results.addLast(newResult);
+	}
+
 	public abstract double calculateScore();
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}	
+
+	public void awardMedals() {
+		Result result; 
+		Athlete athlete;
+		results.sort();
+		for(int i=0;i<3;i+=1){
+			result = results.get(i)
+			athlete = auxResult.getAthlete();
+			athlete.getCountry().winMedal(i+1);
+		}
+	}	
 	
 	public double getLowerScore(double[] scores){
 		int lower = scores[0];
@@ -26,18 +50,18 @@ public abstract class AbstractSport {
 		return greater;
 	}
 
-	public int getId() {
-		return id;
+	public double getAvgScore(double[] scores){
+		double sum = 0;
+		for(int i=0; i<scores.lenght; i++) sum = sum + scores[i];
+		return sum/scores.lenght;
 	}
 
-	public String getName() {
-		return name;
-	}	
+	public double getTotalScore(double[] scores){
+		double sum = 0;
+		for(int i=0; i<scores.lenght; i++) sum = sum + scores[i];
+		return sum;	
+	}
 
-	public void awardMedals() {
-		//pegar os três primeiros de registered e dá medalhas pros paises
-	}	
-	
 	@Override
 	public String toString() {
 		//(?)

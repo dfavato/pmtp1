@@ -10,7 +10,7 @@ public class Athlete {
 		this.name = name;
 		this.country = country;
 	}
-	
+/*	
 	public Athlete(String line) {
 		this(
 				Integer.parseInt(line.split(";")[0]), 					//Atleta id
@@ -18,7 +18,7 @@ public class Athlete {
 				Country.getCountryById(Integer.parseInt(line.split(";")[1]))	//Pais
 			);
 	}
-
+*/
 	public int getId() {
 		return id;
 	}
