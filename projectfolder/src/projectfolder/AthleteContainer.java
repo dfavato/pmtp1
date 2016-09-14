@@ -1,9 +1,11 @@
 package projectfolder;
 
-public class AthleteContainer{
-	private TreeMap<int, Athlete> registered;
+import java.util.TreeMap;
 
-	public void insertAthlete(int id, int name, Country country){
+public class AthleteContainer{
+	private TreeMap<Integer, Athlete> registered;
+
+	public void insertAthlete(int id, String name, Country country){
 		Athlete newAthlete = new Athlete(id,name,country);
 		registered.put(id,newAthlete);
 	}
