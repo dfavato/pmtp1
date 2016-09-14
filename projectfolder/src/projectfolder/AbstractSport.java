@@ -17,7 +17,7 @@ public abstract class AbstractSport {
 		results.addLast(newResult);
 	}
 
-	public abstract double calculateScore();
+	public abstract double calculateScore(double scores[]);
 
 	public String getName() {
 		return name;
@@ -60,7 +60,6 @@ public abstract class AbstractSport {
 
 	@Override
 	public String toString() {
-		//(?)
-		return this.toString();
+		return this.getName();
 	}
 }

@@ -10,14 +10,14 @@ public class SportContainer{
 	private static final int JUMP = 4;
 	private static final int GYMNASTICS = 5;
 
-	public void insertSport(int id, int name){
+	public void insertSport(int id, String name){
 		//it uses createSport cause the sport type may vary
 		//its created a AbstractSports son, not an AbstractSport
 		AbstractSport newSport = createSport(id,name);
 		registered.put(id,newSport);
 	}
 
-	private AbstractSport createSport(int id, int name){
+	private AbstractSport createSport(int id, String name){
 		switch(id){
 			case RACE:
 				Race race = new Race();
@@ -40,6 +40,15 @@ public class SportContainer{
 
 	public AbstractSport getSportById(int id){
 		return registered.get(id);
+	}
+	
+	@Override
+	public String toString() {
+		String string = "";
+		for (AbstractSport sport : registered.values()) {
+			string += sport.toString() + "\n";
+		}
+		return string;
 	}
  
 }

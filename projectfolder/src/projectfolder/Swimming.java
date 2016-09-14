@@ -1,6 +1,5 @@
 package projectfolder;
 
-import java.util.Iterator;
 
 public class Swimming extends AbstractSport {
 	
