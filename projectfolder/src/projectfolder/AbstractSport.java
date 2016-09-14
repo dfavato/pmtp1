@@ -1,14 +1,14 @@
 package projectfolder;
 
-import java.util.TreeMap;
-import java.utli.LinkedList;
+import java.util.Collections;
+import java.util.LinkedList;
 
 public abstract class AbstractSport {
 	private String name;
 	private LinkedList<Result> results;
 	public static final int PODIUM_SIZE = 3;
 	
-	public void AbstractSport(String name){
+	public AbstractSport(String name){
 		this.name = name;
 	}
 
@@ -19,10 +19,6 @@ public abstract class AbstractSport {
 
 	public abstract double calculateScore();
 
-	public int getId() {
-		return id;
-	}
-
 	public String getName() {
 		return name;
 	}	
@@ -30,40 +26,41 @@ public abstract class AbstractSport {
 	public void awardMedals() {
 		Result result; 
 		Athlete athlete;
-		results.sort();
+		Collections.sort(this.results);
 		for(int i=0;i<3;i+=1){
-			result = results.get(i)
-			athlete = auxResult.getAthlete();
+			result = results.get(i);
+			athlete = result.getAthlete();
 			athlete.getCountry().winMedal(i+1);
 		}
 	}	
 	
 	public double getLowerScore(double[] scores){
-		int lower = scores[0];
-		for(int i=1; i<scores.lenght; i++) if(lower>scores[i]) lower = scores[i];
+		double lower = scores[0];
+		for(int i=1; i<scores.length; i++) if(lower>scores[i]) lower = scores[i];
 		return lower;
 	}
 
 	public double getHigherScore(double[] scores){
-		int greater = scores[0];
-		for(int i=1; i<scores.lenght; i++) if(greater<scores[i]) greater = scores[i];
+		double greater = scores[0];
+		for(int i=1; i<scores.length; i++) if(greater<scores[i]) greater = scores[i];
 		return greater;
 	}
 
 	public double getAvgScore(double[] scores){
 		double sum = 0;
-		for(int i=0; i<scores.lenght; i++) sum = sum + scores[i];
-		return sum/scores.lenght;
+		for(int i=0; i<scores.length; i++) sum = sum + scores[i];
+		return sum/scores.length;
 	}
 
 	public double getTotalScore(double[] scores){
 		double sum = 0;
-		for(int i=0; i<scores.lenght; i++) sum = sum + scores[i];
+		for(int i=0; i<scores.length; i++) sum = sum + scores[i];
 		return sum;	
 	}
 
 	@Override
 	public String toString() {
 		//(?)
+		return this.toString();
 	}
 }
