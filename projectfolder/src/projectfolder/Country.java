@@ -1,11 +1,5 @@
 package projectfolder;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
-
 public class Country {
 	private String name;
 	private int gold = 0;
@@ -16,37 +10,8 @@ public class Country {
 	public static final int SILVER = 2;
 	public static final int BRONZE = 3;
 
-/*
-	public static void registerFromFile(String file) {
-		BufferedReader br;
-		String line;
-		try {
-			br = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream(file)));
-			do {
-				line = br.readLine();
-				if (line != null) {
-					registerCountry(new Country(line));
-				}
-			} while (line != null);
-			br.close();
-		} catch (IOException e) {
-			System.err.println("Não foi possível abrir o arquivo " + file);
-		}
-	}
-*/	
-	public static void medalBoard() {
-		System.out.println("Quadro de medalhas\n");
-		System.out.println("País Ouro Prata Bronze");
-		for (Country country : registered.values()) {
-			System.out.println(country.toString());
-		}
-	}
-	
 //	Instance methods
-	public Country(int id, String strName) {
-		this.id = id;
+	public Country(String strName) {
 		this.name = strName;
 	}
 	
@@ -67,9 +32,6 @@ public class Country {
 	}
 	public void setBronze(int bronze) {
 		this.bronze = bronze;
-	}
-	public int getId() {
-		return id;
 	}
 	public String getName() {
 		return name;
