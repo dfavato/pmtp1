@@ -9,6 +9,10 @@ public class SportContainer{
 	private static final int WEIGHT = 3;
 	private static final int JUMP = 4;
 	private static final int GYMNASTICS = 5;
+	
+	public SportContainer() {
+		registered = new TreeMap<>();
+	}
 
 	public void insertSport(int id, String name){
 		//it uses createSport cause the sport type may vary
