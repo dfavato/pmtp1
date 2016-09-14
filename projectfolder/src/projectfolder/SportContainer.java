@@ -20,6 +20,12 @@ public class SportContainer{
 		AbstractSport newSport = createSport(id,name);
 		registered.put(id,newSport);
 	}
+	
+	public void awardMedals() {
+		for (AbstractSport sport : registered.values()) {
+			sport.awardMedals();
+		}
+	}
 
 	private AbstractSport createSport(int id, String name){
 		switch(id){

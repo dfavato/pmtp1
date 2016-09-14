@@ -12,5 +12,10 @@ public class Weight extends AbstractSport {
 		return this.getTotalScore(weights);
 	}
 
+	@Override
+	public boolean ascending_podium() {
+		return false;
+	}
+
 
 }

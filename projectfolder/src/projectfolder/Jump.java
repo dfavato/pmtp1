@@ -12,4 +12,9 @@ public class Jump extends AbstractSport {
 		return this.getHigherScore(jumps);
 	}
 
+	@Override
+	public boolean ascending_podium() {
+		return false;
+	}
+
 }

@@ -12,4 +12,9 @@ public class Gymnastics extends AbstractSport {
 		return this.getAvgScore(scores);
 	}
 
+	@Override
+	public boolean ascending_podium() {
+		return false;
+	}
+
 }

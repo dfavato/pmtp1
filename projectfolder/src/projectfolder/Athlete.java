@@ -30,4 +30,10 @@ public class Athlete {
 	public String getName() {
 		return name;
 	}
+	
+	@Override
+	public String toString() {
+		return this.getId() + " - " + this.getName() + " - " + this.getCountry().getName();
+	}
+	
 }

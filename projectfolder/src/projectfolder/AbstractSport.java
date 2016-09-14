@@ -10,14 +10,18 @@ public abstract class AbstractSport {
 	
 	public AbstractSport(String name){
 		this.name = name;
+		this.results = new LinkedList<>();
 	}
 
-	public void insertCompetitorResult(Athlete athlete, double score){
+	public void insertCompetitorResult(Athlete athlete, double scores[]){
+		double score;
+		score = calculateScore(scores);
 		Result newResult = new Result(athlete,score);
 		results.addLast(newResult);
 	}
 
 	public abstract double calculateScore(double scores[]);
+	public abstract boolean ascending_podium();
 
 	public String getName() {
 		return name;
@@ -26,7 +30,11 @@ public abstract class AbstractSport {
 	public void awardMedals() {
 		Result result; 
 		Athlete athlete;
-		Collections.sort(this.results);
+		if (this.ascending_podium()) {
+			Collections.sort(this.results);
+		} else {
+			Collections.sort(this.results, Collections.reverseOrder());
+		}
 		for(int i=0;i<3;i+=1){
 			result = results.get(i);
 			athlete = result.getAthlete();
@@ -60,6 +68,11 @@ public abstract class AbstractSport {
 
 	@Override
 	public String toString() {
-		return this.getName();
+		String string = "";
+		string += this.getName() + "\n\n";
+		for (Result result : results) {
+			string += result.getAthlete().getName() + " " + result.getScore() + "\n";
+		}
+		return string;
 	}
 }

@@ -4,6 +4,10 @@ import java.util.TreeMap;
 
 public class CountryContainer{
 	private TreeMap<Integer, Country> registered;
+	
+	public CountryContainer(){
+		this.registered = new TreeMap<>();
+	}
 
 	public void insertCountry(int id, String name){
 		Country newCountry = new Country(name);
@@ -19,6 +23,15 @@ public class CountryContainer{
 		for (Country country : registered.values()) {
 			System.out.println(country.toString());
 		}
+	}
+	
+	@Override
+	public String toString() {
+		String string = "";
+		for (Country country : registered.values()) {
+			string += country.toString() + "\n";
+		}
+		return string;
 	}
 	
 /*
