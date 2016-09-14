@@ -1,6 +1,5 @@
 package projectfolder;
 
-import java.util.Iterator;
 
 public class Gymnastics extends AbstractSport {
 	
@@ -11,6 +10,11 @@ public class Gymnastics extends AbstractSport {
 	@Override
 	public double calculateScore(double[] scores) {
 		return this.getAvgScore(scores);
+	}
+
+	@Override
+	public boolean ascending_podium() {
+		return false;
 	}
 
 }

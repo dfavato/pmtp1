@@ -1,6 +1,5 @@
 package projectfolder;
 
-import java.util.Iterator;
 
 public class Jump extends AbstractSport {
 	
@@ -11,6 +10,11 @@ public class Jump extends AbstractSport {
 	@Override
 	public double calculateScore(double[] jumps) {
 		return this.getHigherScore(jumps);
+	}
+
+	@Override
+	public boolean ascending_podium() {
+		return false;
 	}
 
 }

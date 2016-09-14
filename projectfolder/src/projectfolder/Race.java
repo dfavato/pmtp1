@@ -10,5 +10,10 @@ public class Race extends AbstractSport {
 		return this.getLowerScore(timing);
 	}
 
+	@Override
+	public boolean ascending_podium() {
+		return true;
+	}
+
 
 }
