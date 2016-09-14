@@ -3,7 +3,7 @@ package projectfolder;
 import java.util.TreeMap;
 
 public class SportContainer{
-	private TreeMap<int, AbstractSport> registered;
+	private TreeMap<Integer, AbstractSport> registered;
 	private static final int RACE = 1;	
 	private static final int SWIMMING = 2;
 	private static final int WEIGHT = 3;
@@ -22,25 +22,20 @@ public class SportContainer{
 			case RACE:
 				Race race = new Race();
 				return race;
-				break;
 			case SWIMMING:
-				Swimming swim = new Simming();
+				Swimming swim = new Swimming();
 				return swim;
-				break;
 			case WEIGHT:
 				Weight weight = new Weight();
 				return weight;
-				break;
 			case JUMP:
 				Jump jump = new Jump();
 				return jump;
-				break;
 			case GYMNASTICS:
 				Gymnastics gym = new Gymnastics();
 				return gym;
-				break;
 		}		
-		return NULL;
+		return null;
 	}
 
 	public AbstractSport getSportById(int id){
