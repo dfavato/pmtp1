@@ -14,7 +14,7 @@ public class Gymnastics extends AbstractSport {
 	}
 
 	@Override
-	public boolean ascending_podium() {
+	public boolean ascendingPodium() {
 		return false;
 	}
 

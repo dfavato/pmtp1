@@ -14,7 +14,7 @@ public class Swimming extends AbstractSport {
 	}
 
 	@Override
-	public boolean ascending_podium() {
+	public boolean ascendingPodium() {
 		return true;
 	}
 

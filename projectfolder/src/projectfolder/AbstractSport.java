@@ -22,7 +22,7 @@ public abstract class AbstractSport {
 	}
 
 	public abstract double calculateScore(double scores[]);
-	public abstract boolean ascending_podium();
+	public abstract boolean ascendingPodium();
 
 	public String getName() {
 		return name;
@@ -34,7 +34,7 @@ public abstract class AbstractSport {
 	public void awardMedals() {
 		Result result; 
 		Athlete athlete;
-		if (this.ascending_podium()) {
+		if (this.ascendingPodium()) {
 			Collections.sort(this.results);
 		} else {
 			Collections.sort(this.results, Collections.reverseOrder());

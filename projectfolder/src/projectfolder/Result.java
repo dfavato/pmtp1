@@ -19,12 +19,12 @@ public class Result implements Comparable<Result>{
 
 	@Override
 	public int compareTo(Result o) {
-		int score_compare;
-		score_compare = Double.compare(this.getScore(), o.getScore());
-		if(score_compare == 0) {
+		int scoreCompare;
+		scoreCompare = Double.compare(this.getScore(), o.getScore());
+		if(scoreCompare == 0) {
 			return this.getAthlete().getName().compareTo(o.getAthlete().getName());
 		} else {
-			return score_compare;
+			return scoreCompare;
 		}
 	}
 	
