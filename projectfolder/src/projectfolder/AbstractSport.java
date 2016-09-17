@@ -4,12 +4,13 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public abstract class AbstractSport {
+	private int id;
 	private String name;
 	private LinkedList<Result> results;
-	public static final int PODIUM_SIZE = 3;
 	
-	public AbstractSport(String name){
+	public AbstractSport(String name, int id){
 		this.name = name;
+		this.id = id;
 		this.results = new LinkedList<>();
 	}
 
@@ -25,7 +26,10 @@ public abstract class AbstractSport {
 
 	public String getName() {
 		return name;
-	}	
+	}
+	public int getId() {
+		return this.id;
+	}
 
 	public void awardMedals() {
 		Result result; 

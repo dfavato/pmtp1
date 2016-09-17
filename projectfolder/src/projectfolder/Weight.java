@@ -2,9 +2,10 @@ package projectfolder;
 
 
 public class Weight extends AbstractSport {
+	public static final int ID = 3;
 	
 	public Weight() {
-		super("Levantamento de Peso");
+		super("Levantamento de Peso", ID);
 	}
 
 	@Override

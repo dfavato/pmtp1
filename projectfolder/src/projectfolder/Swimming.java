@@ -2,9 +2,10 @@ package projectfolder;
 
 
 public class Swimming extends AbstractSport {
+	public static final int ID = 2;
 	
 	public Swimming() {
-		super("Natação");
+		super("Natação", ID);
 	}
 
 	@Override
