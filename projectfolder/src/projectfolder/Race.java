@@ -1,8 +1,11 @@
 package projectfolder;
 
+
 public class Race extends AbstractSport {
+	public static final int ID = 1;
+	
 	public Race() {
-		super("Corrida");
+		super("Corrida", ID);
 	}
 
 	@Override
@@ -11,7 +14,7 @@ public class Race extends AbstractSport {
 	}
 
 	@Override
-	public boolean ascending_podium() {
+	public boolean ascendingPodium() {
 		return true;
 	}
 

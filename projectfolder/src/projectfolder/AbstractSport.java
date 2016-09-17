@@ -4,12 +4,13 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public abstract class AbstractSport {
+	private int id;
 	private String name;
 	private LinkedList<Result> results;
-	public static final int PODIUM_SIZE = 3;
 	
-	public AbstractSport(String name){
+	public AbstractSport(String name, int id){
 		this.name = name;
+		this.id = id;
 		this.results = new LinkedList<>();
 	}
 
@@ -21,16 +22,19 @@ public abstract class AbstractSport {
 	}
 
 	public abstract double calculateScore(double scores[]);
-	public abstract boolean ascending_podium();
+	public abstract boolean ascendingPodium();
 
 	public String getName() {
 		return name;
-	}	
+	}
+	public int getId() {
+		return this.id;
+	}
 
 	public void awardMedals() {
 		Result result; 
 		Athlete athlete;
-		if (this.ascending_podium()) {
+		if (this.ascendingPodium()) {
 			Collections.sort(this.results);
 		} else {
 			Collections.sort(this.results, Collections.reverseOrder());
@@ -71,7 +75,7 @@ public abstract class AbstractSport {
 		String string = "";
 		string += this.getName() + "\n\n";
 		for (Result result : results) {
-			string += result.getAthlete().getName() + " " + result.getScore() + "\n";
+			string += String.format("%-10s %.2f\n", result.getAthlete().getName(), result.getScore());
 		}
 		return string;
 	}

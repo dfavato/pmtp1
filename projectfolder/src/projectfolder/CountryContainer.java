@@ -17,17 +17,10 @@ public class CountryContainer{
 		return registered.get(id);
 	}
 	
-	public void medalBoard() {
-		System.out.println("Quadro de medalhas\n");
-		System.out.println("País Ouro Prata Bronze");
-		for (Country country : registered.values()) {
-			System.out.println(country.toString());
-		}
-	}
-	
 	@Override
 	public String toString() {
-		String string = "";
+		String string = "Quadro de medalhas\n\n";
+		string += "País       Ouro       Prata      Bronze\n";
 		for (Country country : registered.values()) {
 			string += country.toString() + "\n";
 		}

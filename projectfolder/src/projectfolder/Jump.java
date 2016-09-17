@@ -2,9 +2,10 @@ package projectfolder;
 
 
 public class Jump extends AbstractSport {
+	public static final int ID = 4;
 	
 	public Jump() {
-		super("Salto em altura");
+		super("Salto em altura", ID);
 	}
 
 	@Override
@@ -13,7 +14,7 @@ public class Jump extends AbstractSport {
 	}
 
 	@Override
-	public boolean ascending_podium() {
+	public boolean ascendingPodium() {
 		return false;
 	}
 

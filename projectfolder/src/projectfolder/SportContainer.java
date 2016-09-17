@@ -4,11 +4,6 @@ import java.util.TreeMap;
 
 public class SportContainer{
 	private TreeMap<Integer, AbstractSport> registered;
-	private static final int RACE = 1;	
-	private static final int SWIMMING = 2;
-	private static final int WEIGHT = 3;
-	private static final int JUMP = 4;
-	private static final int GYMNASTICS = 5;
 	
 	public SportContainer() {
 		registered = new TreeMap<>();
@@ -29,19 +24,19 @@ public class SportContainer{
 
 	private AbstractSport createSport(int id, String name){
 		switch(id){
-			case RACE:
+			case Race.ID:
 				Race race = new Race();
 				return race;
-			case SWIMMING:
+			case Swimming.ID:
 				Swimming swim = new Swimming();
 				return swim;
-			case WEIGHT:
+			case Weight.ID:
 				Weight weight = new Weight();
 				return weight;
-			case JUMP:
+			case Jump.ID:
 				Jump jump = new Jump();
 				return jump;
-			case GYMNASTICS:
+			case Gymnastics.ID:
 				Gymnastics gym = new Gymnastics();
 				return gym;
 		}		
