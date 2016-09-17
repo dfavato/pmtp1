@@ -1,19 +1,37 @@
 package projectfolder;
 
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Estatistica {
 	
-	public static void print(AbstractSport sport) {
-		PrintWriter pw = new PrintWriter(createOutputFile(sport));
-		pw.println(sport.toString());
+	public static void printAll(String fileName, SportContainer sports, CountryContainer countries) {
+		BufferedReader br = Util.getReader(fileName);
+		String line;
+		int sportId;
+		do {
+			line = Util.getLine(br);
+			if(line != null && line.contains(";")) {
+				sportId = Integer.parseInt(line.split(";")[1]);
+				print(sports.getSportById(sportId));
+			} else {
+				print(countries);
+			}
+		} while (line != null);
 	}
 	
-	public static void print(CountryContainer countries) {
+	private static void print(AbstractSport sport) {
+		PrintWriter pw = new PrintWriter(createOutputFile(sport));
+		pw.print(sport.toString());
+		pw.close();
+	}
+	
+	private static void print(CountryContainer countries) {
 		PrintWriter pw = new PrintWriter(createOutputFile());
-		pw.println(countries.toString());
+		pw.print(countries.toString());
+		pw.close();
 	}
 	
 	private static FileOutputStream createOutputFile(AbstractSport sport) {

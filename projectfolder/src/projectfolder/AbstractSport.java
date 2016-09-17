@@ -75,7 +75,7 @@ public abstract class AbstractSport {
 		String string = "";
 		string += this.getName() + "\n\n";
 		for (Result result : results) {
-			string += result.getAthlete().getName() + " " + result.getScore() + "\n";
+			string += String.format("%-10s %.2f\n", result.getAthlete().getName(), result.getScore());
 		}
 		return string;
 	}

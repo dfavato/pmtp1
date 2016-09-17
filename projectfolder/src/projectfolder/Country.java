@@ -63,8 +63,7 @@ public class Country {
 	
 	@Override
 	public String toString() {
-		return this.getName() + " " + this.getGold() + " " +
-				this.getSilver() + " " + this.getBronze();
+		return String.format("%-10s %-10d %-10d %-10d", this.getName(), this.getGold(), this.getSilver(), this.getBronze());
 	}
 		
 }
