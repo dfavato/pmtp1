@@ -51,7 +51,7 @@ public class Country implements Comparable<Country>{
 	
 	/**
 	 * Adciona medalhas para delegação de determinado País.
-	 * @param type 1 = Ouro, 2 = Prata, 3 = Bronze
+	 * @param type 0 = Ouro, 1 = Prata, 2 = Bronze
 	 * @return o número de medalhas daquele tipo que o País possui
 	 */
 	public int winMedal(int type) {
