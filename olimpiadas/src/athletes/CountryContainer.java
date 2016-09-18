@@ -1,6 +1,8 @@
 package athletes;
 
 import java.io.BufferedReader;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.TreeMap;
 
 import main.Util;
@@ -37,9 +39,11 @@ public class CountryContainer{
 	
 	@Override
 	public String toString() {
+		LinkedList<Country> countries = new LinkedList<>(this.registered.values());
+		Collections.sort(countries, Collections.reverseOrder());
 		String string = "Quadro de medalhas\n\n";
 		string += "País       Ouro       Prata      Bronze\n";
-		for (Country country : registered.values()) {
+		for (Country country : countries) {
 			string += country.toString() + "\n";
 		}
 		return string;
