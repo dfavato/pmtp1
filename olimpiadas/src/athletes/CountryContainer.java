@@ -1,12 +1,30 @@
 package athletes;
 
+import java.io.BufferedReader;
 import java.util.TreeMap;
+
+import main.Util;
 
 public class CountryContainer{
 	private TreeMap<Integer, Country> registered;
 	
 	public CountryContainer(){
 		this.registered = new TreeMap<>();
+	}
+	
+	public CountryContainer(String fileAddress){
+		this();
+		BufferedReader cursor = Util.getReader(fileAddress);
+		String line, name;
+		int id;
+		do {
+			line = Util.getLine(cursor);
+			if(line != null) {
+				id = Integer.parseInt(line.split(";")[0]);
+				name = line.split(";")[1];
+				this.insertCountry(id, name);
+			}
+		} while (line != null);
 	}
 
 	public void insertCountry(int id, String name){
@@ -26,27 +44,5 @@ public class CountryContainer{
 		}
 		return string;
 	}
-	
-/*
-	public static void registerFromFile(String file) {
-		BufferedReader br;
-		String line;
-		try {
-			br = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream(file)));
-			do {
-				line = br.readLine();
-				if (line != null) {
-					registerCountry(new Country(line));
-				}
-			} while (line != null);
-			br.close();
-		} catch (IOException e) {
-			System.err.println("Não foi possível abrir o arquivo " + file);
-		}
-	}
-*/	
-	
 	
 }

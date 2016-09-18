@@ -11,6 +11,9 @@ public abstract class AbstractSport {
 	private String name;
 	private LinkedList<Result> results;
 	
+	public abstract double calculateScore(double scores[]);
+	public abstract boolean ascendingPodium();
+	
 	public AbstractSport(String name, int id){
 		this.name = name;
 		this.id = id;
@@ -23,9 +26,6 @@ public abstract class AbstractSport {
 		Result newResult = new Result(athlete,score);
 		results.addLast(newResult);
 	}
-
-	public abstract double calculateScore(double scores[]);
-	public abstract boolean ascendingPodium();
 
 	public String getName() {
 		return name;

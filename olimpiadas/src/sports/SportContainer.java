@@ -1,6 +1,9 @@
 package sports;
 
+import java.io.BufferedReader;
 import java.util.TreeMap;
+
+import main.Util;
 
 public class SportContainer{
 	private TreeMap<Integer, AbstractSport> registered;
@@ -8,6 +11,22 @@ public class SportContainer{
 	public SportContainer() {
 		registered = new TreeMap<>();
 	}
+	
+	public SportContainer (String fileAddress){
+		this();
+		BufferedReader cursor = Util.getReader(fileAddress);
+		String line, name;
+		int id;
+		do {
+			line = Util.getLine(cursor);
+			if(line != null) {
+				id = Integer.parseInt(line.split(";")[0]);
+				name = line.split(";")[1];
+				this.insertSport(id, name);
+			}
+		} while (line != null);
+	}
+	
 
 	public void insertSport(int id, String name){
 		//it uses createSport cause the sport type may vary
