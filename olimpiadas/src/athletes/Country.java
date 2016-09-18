@@ -1,6 +1,6 @@
 package athletes;
 
-public class Country {
+public class Country implements Comparable<Country>{
 	private String name;
 	private int gold = 0;
 	private int silver = 0;
@@ -64,6 +64,19 @@ public class Country {
 	@Override
 	public String toString() {
 		return String.format("%-10s %-10d %-10d %-10d", this.getName(), this.getGold(), this.getSilver(), this.getBronze());
+	}
+
+	@Override
+	public int compareTo(Country o) {
+		int compare;
+		compare = this.getGold() - o.getGold();
+		if(compare == 0) {
+			compare = this.getSilver() - o.getSilver();
+			if(compare == 0) {
+				compare = this.getBronze() - o.getBronze();
+			}
+		}
+		return compare;
 	}
 		
 }

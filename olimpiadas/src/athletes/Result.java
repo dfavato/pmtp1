@@ -31,10 +31,8 @@ public class Result implements Comparable<Result>{
 				idSport = Integer.parseInt(line.split(";")[2]);
 				name = line.split(";")[3];
 				results = line.split(";")[4];
-				
 				sport = sports.getSportById(idSport);
 				country = countries.getCountryById(idCountry);
-				
 				athlete = new Athlete(idAthlete, name, country);
 				scores = parseResults(results.split("\\|"));
 				sport.insertCompetitorResult(athlete, scores);
