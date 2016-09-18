@@ -1,4 +1,4 @@
-package projectfolder;
+package sports;
 
 
 public class Race extends AbstractSport {

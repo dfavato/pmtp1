@@ -1,7 +1,10 @@
-package projectfolder;
+package sports;
 
 import java.util.Collections;
 import java.util.LinkedList;
+
+import athletes.Athlete;
+import athletes.Result;
 
 public abstract class AbstractSport {
 	private int id;

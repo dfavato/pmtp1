@@ -1,4 +1,4 @@
-package projectfolder;
+package sports;
 
 import java.util.TreeMap;
 

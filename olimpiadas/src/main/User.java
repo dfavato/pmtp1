@@ -1,6 +1,13 @@
-package projectfolder;
+package main;
 
 import java.io.BufferedReader;
+
+import athletes.Athlete;
+import athletes.AthleteContainer;
+import athletes.Country;
+import athletes.CountryContainer;
+import sports.AbstractSport;
+import sports.SportContainer;
 
 
 public class User {

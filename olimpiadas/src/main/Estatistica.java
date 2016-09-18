@@ -1,9 +1,13 @@
-package projectfolder;
+package main;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import athletes.CountryContainer;
+import sports.AbstractSport;
+import sports.SportContainer;
 
 public class Estatistica {
 	

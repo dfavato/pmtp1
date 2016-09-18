@@ -1,4 +1,4 @@
-package projectfolder;
+package athletes;
 
 public class Result implements Comparable<Result>{
 	private Athlete athlete;

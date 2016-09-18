@@ -1,4 +1,4 @@
-package projectfolder;
+package athletes;
 
 public class Athlete {
 	private int id;

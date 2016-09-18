@@ -1,4 +1,4 @@
-package projectfolder;
+package athletes;
 
 public class Country {
 	private String name;
