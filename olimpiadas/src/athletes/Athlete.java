@@ -1,5 +1,8 @@
-package projectfolder;
+package athletes;
 
+/**
+ * Classe responsável por gerir as informações dos Atletas
+ */
 public class Athlete {
 	private int id;
 	private Country country;
@@ -10,15 +13,7 @@ public class Athlete {
 		this.name = name;
 		this.country = country;
 	}
-/*	
-	public Athlete(String line) {
-		this(
-				Integer.parseInt(line.split(";")[0]), 					//Atleta id
-				line.split(";")[3],										//Atleta nome
-				Country.getCountryById(Integer.parseInt(line.split(";")[1]))	//Pais
-			);
-	}
-*/
+
 	public int getId() {
 		return id;
 	}

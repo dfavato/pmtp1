@@ -1,4 +1,4 @@
-package projectfolder;
+package sports;
 
 
 public class Swimming extends AbstractSport {
