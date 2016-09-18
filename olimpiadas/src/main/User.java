@@ -9,7 +9,9 @@ import sports.AbstractSport;
 import sports.SportContainer;
 import athletes.Result;
 
-
+/**
+ * Classe principal que oferece a interação com o usuário
+ */
 public class User {
 
 	public static void main(String[] args) {
@@ -21,7 +23,7 @@ public class User {
 		System.out.println("Arquivos gerados com sucesso.");
 	}
 	
-	public static void getAthletesResults(CountryContainer countries, SportContainer sports, String fileAddress){
+	private static void getAthletesResults(CountryContainer countries, SportContainer sports, String fileAddress){
 		Athlete athlete;
 		BufferedReader cursor = Util.getReader(fileAddress);
 		String line, name, results;
