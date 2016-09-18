@@ -19,10 +19,17 @@ public class User {
 		CountryContainer countries = new CountryContainer("paises.txt");
 		getAthletesResults(countries, sports, "atletas.txt");
 		sports.awardMedals();
-		Estatistica.printAll("estatisticas.txt", sports, countries);
+		Statistics.printAll("estatisticas.txt", sports, countries);
 		System.out.println("Arquivos gerados com sucesso.");
 	}
 	
+	/**
+	 * Método responsável por processar o arquivo com os resultados
+	 * Crias os atletas e adciona os resultados à cada Esporte
+	 * @param countries Coleção de países participantes
+	 * @param sports Coleção dos Esportes disputados
+	 * @param fileAddress Local do arquivo de entrada com os resultados
+	 */
 	private static void getAthletesResults(CountryContainer countries, SportContainer sports, String fileAddress){
 		Athlete athlete;
 		BufferedReader cursor = Util.getReader(fileAddress);

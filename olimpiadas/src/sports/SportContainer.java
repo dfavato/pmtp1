@@ -5,13 +5,24 @@ import java.util.TreeMap;
 
 import main.Util;
 
+/**
+ * Classe responsável por guradar os Esportes disputados
+ */
 public class SportContainer{
 	private TreeMap<Integer, AbstractSport> registered;
 	
+	/**
+	 * Cria uma coleção de Esportes vazia
+	 */
 	public SportContainer() {
 		registered = new TreeMap<>();
 	}
 	
+	/**
+	 * Cria uma coleção de Esportes e preenche com os registros do
+	 * arquivo passado como parâmetros
+	 * @param fileAddress local do arquivo que armazena os registros dos Esportes
+	 */
 	public SportContainer (String fileAddress){
 		this();
 		BufferedReader cursor = Util.getReader(fileAddress);
@@ -28,19 +39,32 @@ public class SportContainer{
 	}
 	
 
+	/**
+	 * Insere um Esporte na coleção
+	 * @param id do Esporte
+	 * @param name nome do Esporte
+	 */
 	public void insertSport(int id, String name){
-		//it uses createSport cause the sport type may vary
-		//its created a AbstractSports son, not an AbstractSport
+		//Como o Esporte pode variar a função createSporte é usada na inicialização
 		AbstractSport newSport = createSport(id,name);
 		registered.put(id,newSport);
 	}
 	
+	/**
+	 * Distribui as medalhas para cada um dos Esportes da coleção
+	 */
 	public void awardMedals() {
 		for (AbstractSport sport : registered.values()) {
 			sport.awardMedals();
 		}
 	}
 
+	/**
+	 * Cria um descendente de AbstractSport dependendo do id informada
+	 * @param id do Esporte a ser criado
+	 * @param name nome do Esporte a ser criado
+	 * @return um descendente de AbstractSport
+	 */
 	private AbstractSport createSport(int id, String name){
 		switch(id){
 			case Race.ID:
@@ -62,10 +86,17 @@ public class SportContainer{
 		return null;
 	}
 
+	/**
+	 * @param id do Esporte
+	 * @return o Esporte com o id informado
+	 */
 	public AbstractSport getSportById(int id){
 		return registered.get(id);
 	}
 	
+	/**
+	 * Imprime todos os Esportes da coleção
+	 */
 	@Override
 	public String toString() {
 		String string = "";

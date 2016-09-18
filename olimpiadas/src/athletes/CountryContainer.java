@@ -7,6 +7,9 @@ import java.util.TreeMap;
 
 import main.Util;
 
+/**
+ * Classe que gurda todos os Países participantes em uma coleção
+ */
 public class CountryContainer{
 	private TreeMap<Integer, Country> registered;
 	
@@ -14,6 +17,10 @@ public class CountryContainer{
 		this.registered = new TreeMap<>();
 	}
 	
+	/**
+	 * Cria uma coleção de Países e preenche as informações a partir de um arquivo
+	 * @param fileAddress local do arquivo de entrada
+	 */
 	public CountryContainer(String fileAddress){
 		this();
 		BufferedReader cursor = Util.getReader(fileAddress);
@@ -38,6 +45,9 @@ public class CountryContainer{
 	}
 	
 	@Override
+	/*
+	 * Imprime o quadro de medalhas.
+	 */
 	public String toString() {
 		LinkedList<Country> countries = new LinkedList<>(this.registered.values());
 		Collections.sort(countries, Collections.reverseOrder());
