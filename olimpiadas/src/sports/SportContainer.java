@@ -26,14 +26,13 @@ public class SportContainer{
 	public SportContainer (String fileAddress){
 		this();
 		BufferedReader cursor = Util.getReader(fileAddress);
-		String line, name;
+		String line;
 		int id;
 		do {
 			line = Util.getLine(cursor);
 			if(line != null) {
 				id = Integer.parseInt(line.split(";")[0]);
-				name = line.split(";")[1];
-				this.insertSport(id, name);
+				this.insertSport(id);
 			}
 		} while (line != null);
 	}
@@ -44,7 +43,7 @@ public class SportContainer{
 	 * @param id do Esporte
 	 * @param name nome do Esporte
 	 */
-	public void insertSport(int id, String name){
+	public void insertSport(int id){
 		//Como o Esporte pode variar a função createSporte é usada na inicialização
 		AbstractSport newSport = createSport(id);
 		registered.put(id,newSport);
