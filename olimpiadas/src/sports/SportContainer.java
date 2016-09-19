@@ -46,7 +46,7 @@ public class SportContainer{
 	 */
 	public void insertSport(int id, String name){
 		//Como o Esporte pode variar a função createSporte é usada na inicialização
-		AbstractSport newSport = createSport(id,name);
+		AbstractSport newSport = createSport(id);
 		registered.put(id,newSport);
 	}
 	
@@ -65,7 +65,7 @@ public class SportContainer{
 	 * @param name nome do Esporte a ser criado
 	 * @return um descendente de AbstractSport
 	 */
-	private AbstractSport createSport(int id, String name){
+	private AbstractSport createSport(int id){
 		switch(id){
 			case Race.ID:
 				Race race = new Race();
