@@ -33,7 +33,7 @@ fonte um arquivo Makefile com as opções ‘make’ e ‘make run’.
 Figura que está na documentação e o arquivo html que gera a figura.
 
 ###instrucoes
-Instruções do professor para o trabalho
+Instruções do professor para o trabalho, arquivos de teste e makefile
 
 ###olimpiadas
 use essa pasta como o workspace do eclipse ou de outra IDE se você estiver usando
