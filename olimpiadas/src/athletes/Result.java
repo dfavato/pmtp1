@@ -68,7 +68,7 @@ public class Result implements Comparable<Result>{
 	 */
 	@Override
 	public String toString() {
-		return this.getAthlete().getName() + " - " + this.getScore();
+		return String.format("%-10s %.2f\n", this.getAthlete().getName(), this.getScore());
 	}
 	
 	
