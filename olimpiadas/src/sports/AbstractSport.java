@@ -66,9 +66,13 @@ public abstract class AbstractSport {
 			Collections.sort(this.results, Collections.reverseOrder());
 		}
 		for(int i=Country.GOLD;i<=Country.BRONZE;i+=1){
-			result = results.get(i);
-			athlete = result.getAthlete();
-			athlete.getCountry().winMedal(i);
+			try {
+				result = results.get(i);
+				athlete = result.getAthlete();
+				athlete.getCountry().winMedal(i);
+			} catch (IndexOutOfBoundsException e) {
+				//Ninguém ganha medalha
+			}	
 		}
 	}	
 	
