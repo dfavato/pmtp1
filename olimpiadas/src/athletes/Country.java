@@ -17,60 +17,50 @@ public class Country implements Comparable<Country>{
 		this.name = strName;
 	}
 	
-	public int getGold() {
-		return gold;
-	}
-	public void setGold(int gold) {
-		this.gold = gold;
-	}
-	public int getSilver() {
-		return silver;
-	}
-	public void setSilver(int silver) {
-		this.silver = silver;
-	}
-	public int getBronze() {
-		return bronze;
-	}
-	public void setBronze(int bronze) {
-		this.bronze = bronze;
-	}
 	public String getName() {
-		return name;
+		return this.name;
+	}
+	
+	public int getMedal(int type) {
+		switch (type) {
+		case GOLD:
+			return this.gold;
+		case SILVER:
+			return this.silver;
+		case BRONZE:
+			return this.bronze;
+		default:
+			return 0;
+		}
+	}
+	
+	private int addMedal(int type) {
+		switch (type) {
+		case GOLD:
+			this.gold++;
+			break;
+		case SILVER:
+			this.silver++;
+			break;
+		case BRONZE:
+			this.bronze++;
+			break;
+		}
+		return this.getMedal(type);
 	}
 	
 	/**
 	 * Adciona medalhas para delegação de determinado País.
-	 * @param type 1 = Ouro, 2 = Prata, 3 = Bronze
+	 * @param type 0 = Ouro, 1 = Prata, 2 = Bronze
 	 * @return o número de medalhas daquele tipo que o País possui
 	 */
 	public int winMedal(int type) {
-		int medals = 0;
-		switch (type) {
-		case GOLD:
-			medals = this.getGold();
-			medals++;
-			this.setGold(medals);
-			break;
-		case SILVER:
-			medals = this.getSilver();
-			medals++;
-			this.setSilver(medals);
-			break;
-		case BRONZE:
-			medals = this.getBronze();
-			medals++;
-			this.setBronze(medals);
-			break;
-		default:
-			break;
-		}
-		return medals;
+		return this.addMedal(type);
 	}
 	
 	@Override
 	public String toString() {
-		return String.format("%-10s %-10d %-10d %-10d", this.getName(), this.getGold(), this.getSilver(), this.getBronze());
+		return String.format("%-10s %-10d %-10d %-10d", this.getName(), this.getMedal(GOLD), this.getMedal(SILVER), this.getMedal(BRONZE));
 	}
 
 	/**
@@ -80,11 +70,11 @@ public class Country implements Comparable<Country>{
 	@Override
 	public int compareTo(Country o) {
 		int compare;
-		compare = this.getGold() - o.getGold();
+		compare = this.getMedal(GOLD) - o.getMedal(GOLD);
 		if(compare == 0) {
-			compare = this.getSilver() - o.getSilver();
+			compare = this.getMedal(SILVER) - o.getMedal(SILVER);
 			if(compare == 0) {
-				compare = this.getBronze() - o.getBronze();
+				compare = this.getMedal(BRONZE) - o.getMedal(BRONZE);
 			}
 		}
 		return compare;
