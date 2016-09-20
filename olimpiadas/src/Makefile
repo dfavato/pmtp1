@@ -1,8 +1,8 @@
 all:
-	javac src/*/*.java
-
+	javac */*.java
+	
 clean:
-	rm -rf src/*/*.class
-	rm -rf src/*/*.class
+	rm -rf */*.class
+	rm -rf */*.class
 run:
-	java src/main/User
+	java main/User

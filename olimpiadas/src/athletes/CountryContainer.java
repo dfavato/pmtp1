@@ -22,6 +22,7 @@ public class CountryContainer{
 	 * @param fileAddress local do arquivo de entrada
 	 */
 	public CountryContainer(String fileAddress){
+		this();
 		BufferedReader cursor = Util.getReader(fileAddress);
 		String line, name;
 		int id;
