@@ -20,6 +20,7 @@ public class User {
 		getAthletesResults(countries, sports, "atletas.txt");
 		sports.awardMedals();
 		Statistics.printAll("estatisticas.txt", sports, countries);
+		System.out.println("Files generated successfully.");
 		System.out.println("Arquivos gerados com sucesso.");
 	}
 	

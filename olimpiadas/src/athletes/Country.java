@@ -75,6 +75,9 @@ public class Country implements Comparable<Country>{
 			compare = this.getMedal(SILVER) - o.getMedal(SILVER);
 			if(compare == 0) {
 				compare = this.getMedal(BRONZE) - o.getMedal(BRONZE);
+				if(compare == 0){
+					compare = this.getName().compareTo(o.getName());
+				}
 			}
 		}
 		return compare;

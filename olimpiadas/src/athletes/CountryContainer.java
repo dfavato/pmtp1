@@ -22,7 +22,6 @@ public class CountryContainer{
 	 * @param fileAddress local do arquivo de entrada
 	 */
 	public CountryContainer(String fileAddress){
-		this();
 		BufferedReader cursor = Util.getReader(fileAddress);
 		String line, name;
 		int id;
@@ -51,10 +50,10 @@ public class CountryContainer{
 	public String toString() {
 		LinkedList<Country> countries = new LinkedList<>(this.registered.values());
 		Collections.sort(countries, Collections.reverseOrder());
-		String string = "Quadro de medalhas\n\n";
-		string += "País       Ouro       Prata      Bronze\n";
+		String string = "Quadro de medalhas" + System.lineSeparator() + System.lineSeparator();
+		string += "Pa\u00eds       Ouro       Prata      Bronze" + System.lineSeparator();
 		for (Country country : countries) {
-			string += country.toString() + "\n";
+			string += country.toString() + System.lineSeparator();
 		}
 		return string;
 	}

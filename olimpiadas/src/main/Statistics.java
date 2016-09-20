@@ -21,13 +21,14 @@ public class Statistics {
 	 * @param countries coleção dos Países participantes
 	 */
 	public static void printAll(String fileName, SportContainer sports, CountryContainer countries) {
+		System.setProperty("file.encoding", "UTF-8");
 		BufferedReader br = Util.getReader(fileName);
 		String line;
 		int sportId;
 		do {
 			line = Util.getLine(br);
 			if(line != null && line.contains(";")) {
-				sportId = Integer.parseInt(line.split(";")[1]);
+				sportId = Integer.parseInt(line.split(";")[1].replace(" ",""));
 				print(sports.getSportById(sportId));
 			} else {
 				print(countries);

@@ -104,9 +104,9 @@ public abstract class AbstractSport {
 	@Override
 	public String toString() {
 		String string = "";
-		string += this.getName() + "\n\n";
+		string += this.getName() + System.lineSeparator() + System.lineSeparator();
 		for (Result result : results) {
-			string += result.toString();
+			string += result.toString() + System.lineSeparator();
 		}
 		return string;
 	}
